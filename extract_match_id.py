@@ -11,6 +11,8 @@ def get_match_id(team_1,team_2, match_ids):
 
     try:
         url='http://www.datdota.com/matchfinder/classic?team-a='+team_1+'&team-b='+team_2+'&patch=7.19&patch=7.18&patch=7.17&patch=7.16&patch=7.15&patch=7.14&patch=7.13&patch=7.12&patch=7.11&patch=7.10&patch=7.09&patch=7.08&patch=7.07&patch=7.06&patch=7.05&patch=7.04&patch=7.03&patch=7.02&patch=7.01&patch=7.00&patch=6.88&after=20%2F08%2F2015&before=20%2F08%2F2018&duration=0%3B200&duration-value-from=0&duration-value-to=200&valve-event=does-not-matter&threshold=1'
+        
+        print(url)
         r=requests.get(url)
         soup = BeautifulSoup(r.text, 'lxml')
         table = soup.find_all(class_ ='table table-striped table-bordered table-hover data-table')

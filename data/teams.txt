@@ -1,1 +1,0 @@
-["Team Secret", "TNC Predator", "Team Kinguin", "Team Liquid", "Newbee", "Natus Vincere", "Keen Gaming", "PaiN Gaming", "Mineski", "Echo International", "Vega Squadron", "OpTic Gaming", "Fnatic", "LGD.Forever Young", "Virtus.pro", "FlyToMoon", "Immortals", "OG", "CompLexity Gaming", "Going in", "VGJ.Thunder", "Vici Gaming", "Evil Geniuses", "VGJ.Storm", "LGD Gaming"]

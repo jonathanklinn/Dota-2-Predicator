@@ -5,7 +5,7 @@ import numpy as np
 
 api= dota2api.Initialise("B335AEF628EF2F2D2DC5A94BA4A02ED9")
 
-match_data= pd.read_csv("data/match_ids.csv")
+matches_data= pd.read_csv("data/match_ids.csv")
 
 
 pd.set_option('display.expand_frame_repr', False)
@@ -82,7 +82,6 @@ for i in range(0, len(matches_data)):
     print(current_match)
     try:
         match = api.get_match_details(match_id = current_match)
-
         for x in range(0, 5):
             radiant_assists      += match['players'][x]['assists']
             radiant_denies       += match['players'][x]['denies']
@@ -99,19 +98,19 @@ for i in range(0, len(matches_data)):
             radiant_name = match['radiant_name']
             radiant_tower_status = match['tower_status_radiant']
 
-            matches_data.loc[i, 'radiant_assists'] = radiant_assists
-            matches_data.loc[i, 'radiant_barracks'] = radiant_barracks
-            matches_data.loc[i, 'radiant_denies'] = radiant_denies
-            matches_data.loc[i, 'radiant_gpm'] = radiant_gpm
-            matches_data.loc[i, 'radiant_healing'] = radiant_healing
-            matches_data.loc[i, 'radiant_hero_damage'] = radiant_hero_damage
-            matches_data.loc[i, 'radiant_kills'] = radiant_kills
-            matches_data.loc[i, 'radiant_last_hits'] = radiant_last_hits
-            matches_data.loc[i, 'Radiant'] = radiant_name
-            matches_data.loc[i, 'radiant_total_levels'] = radiant_total_levels
-            matches_data.loc[i, 'radiant_tower_status'] = radiant_tower_status
-            matches_data.loc[i, 'radiant_tower_damage'] = radiant_tower_damage
-            matches_data.loc[i, 'radiant_xpm'] = radiant_xpm
+        matches_data.loc[i, 'radiant_assists'] = radiant_assists
+        matches_data.loc[i, 'radiant_barracks'] = radiant_barracks
+        matches_data.loc[i, 'radiant_denies'] = radiant_denies
+        matches_data.loc[i, 'radiant_gpm'] = radiant_gpm
+        matches_data.loc[i, 'radiant_healing'] = radiant_healing
+        matches_data.loc[i, 'radiant_hero_damage'] = radiant_hero_damage
+        matches_data.loc[i, 'radiant_kills'] = radiant_kills
+        matches_data.loc[i, 'radiant_last_hits'] = radiant_last_hits
+        matches_data.loc[i, 'Radiant'] = radiant_name
+        matches_data.loc[i, 'radiant_total_levels'] = radiant_total_levels
+        matches_data.loc[i, 'radiant_tower_status'] = radiant_tower_status
+        matches_data.loc[i, 'radiant_tower_damage'] = radiant_tower_damage
+        matches_data.loc[i, 'radiant_xpm'] = radiant_xpm
 
         for x in range(5, 10):
             dire_assists      += match['players'][x]['assists']
@@ -129,26 +128,27 @@ for i in range(0, len(matches_data)):
             dire_name = match['dire_name']
             dire_tower_status = match['tower_status_dire']
 
-            matches_data.loc[i, 'dire_assists'] = dire_assists
-            matches_data.loc[i, 'dire_barracks'] = dire_barracks
-            matches_data.loc[i, 'dire_denies'] = dire_denies
-            matches_data.loc[i, 'dire_gpm'] = dire_gpm
-            matches_data.loc[i, 'dire_healing'] = dire_healing
-            matches_data.loc[i, 'dire_hero_damage'] = dire_hero_damage
-            matches_data.loc[i, 'dire_kills'] = dire_kills
-            matches_data.loc[i, 'dire_last_hits'] = dire_last_hits
-            matches_data.loc[i, 'Dire'] = dire_name
-            matches_data.loc[i, 'dire_total_levels'] = dire_total_levels
-            matches_data.loc[i, 'dire_tower_damage'] = dire_tower_damage
-            matches_data.loc[i, 'dire_tower_status'] = dire_tower_status
-            matches_data.loc[i, 'dire_xpm'] = dire_xpm
+        matches_data.loc[i, 'dire_assists'] = dire_assists
+        matches_data.loc[i, 'dire_barracks'] = dire_barracks
+        matches_data.loc[i, 'dire_denies'] = dire_denies
+        matches_data.loc[i, 'dire_gpm'] = dire_gpm
+        matches_data.loc[i, 'dire_healing'] = dire_healing
+        matches_data.loc[i, 'dire_hero_damage'] = dire_hero_damage
+        matches_data.loc[i, 'dire_kills'] = dire_kills
+        matches_data.loc[i, 'dire_last_hits'] = dire_last_hits
+        matches_data.loc[i, 'Dire'] = dire_name
+        matches_data.loc[i, 'dire_total_levels'] = dire_total_levels
+        matches_data.loc[i, 'dire_tower_damage'] = dire_tower_damage
+        matches_data.loc[i, 'dire_tower_status'] = dire_tower_status
+        matches_data.loc[i, 'dire_xpm'] = dire_xpm
 
-            first_blood= match['first_blood_time']
-            match_duration       = match['duration']
-            if (match['radiant_win'] == True):
-                match_winner = 1
-            else:
-                match_winner = 0
+        first_blood= match['first_blood_time']
+        match_duration       = match['duration']
+
+        if (match['radiant_win'] == True):
+            match_winner = 1
+        else:
+            match_winner = 0
 
         matches_data.loc[i, 'first_blood'] = first_blood
         matches_data.loc[i, 'match_duration'] = match_duration

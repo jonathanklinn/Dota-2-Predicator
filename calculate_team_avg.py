@@ -52,6 +52,5 @@ del matches_pivot['tower_status']
 
 matches_pivot = matches_pivot.drop(['All'])
 
-# pprint.pprint(matches_pivot)
 
 matches_pivot.to_csv("data/team_averages.csv")

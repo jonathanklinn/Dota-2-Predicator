@@ -1,4 +1,4 @@
-import pprint
+
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
@@ -47,6 +47,6 @@ for x in range(0, len(matchup_data)):
     try:
         find_team_difference(matchup_data.loc[x,'Radiant'], matchup_data.loc[x, 'Dire'], x)
     except:
-        print("Not able to find ", x)
+        print("Could not find match ", x)
 
 matchup_data.to_csv("data/matchup_data.csv", index = False)

@@ -31,6 +31,15 @@ api= dota2api.Initialise("B335AEF628EF2F2D2DC5A94BA4A02ED9")
 
 # All functions that end with path are indicate that the file path to the csv file needs to be inserted as a string.
 
+
+# this function will run the entire pipeline of code listed in this py file and output the dataframe used for modeling
+def run_data_cleaning_pipeline(inital_csv_path):
+    load_csv('data/pre_ti_matches.csv')
+    extract_match_data('data/match_ids')
+    drop_na('data/full_data.csv')
+    find_team_avg('data/full_data.csv')
+    calculate_team_differences('data/team_averages.csv','data/full_data.csv')
+
 # this function creates a match_ids.csv file using the raw data from the query
 def load_csv(csv_path): # parameter is the csv file path as a string
     df=pd.read_csv(csv_path)
@@ -185,7 +194,7 @@ def extract_match_data(match_ids_path):   # parameter is the csv file path as a 
             matches_data.loc[i, 'match_duration'] = match_duration
             matches_data.loc[i, 'radiant_winner'] = match_winner
         except:
-            print("Could not find data for ",  current_match)
+            print("Could not find data for match id : ",  current_match)
 
 
 

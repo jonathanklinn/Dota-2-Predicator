@@ -3,9 +3,10 @@ import pandas as pd
 import numpy as np
 
 
-api= dota2api.Initialise("B335AEF628EF2F2D2DC5A94BA4A02ED9")
+api = dota2api.Initialise("B335AEF628EF2F2D2DC5A94BA4A02ED9")
 
-#CSV file was taken from https://www.opendota.com/ Using the SQL query function using the following SQL Query:
+# CSV file was taken from https://www.opendota.com/
+# Using the SQL query function using the following SQL Query:
 # use ctrl + '/' to uncomment SQL query if you want to use it
 
 # SELECT
@@ -20,7 +21,10 @@ api= dota2api.Initialise("B335AEF628EF2F2D2DC5A94BA4A02ED9")
 # JOIN leagues using(leagueid)
 # JOIN player_matches using(match_id)
 # JOIN heroes on heroes.id = player_matches.hero_id
-# LEFT JOIN notable_players ON notable_players.account_id = player_matches.account_id AND notable_players.locked_until = (SELECT MAX(locked_until) FROM notable_players)
+# LEFT JOIN notable_players
+# ON notable_players.account_id = player_matches.account_id
+# AND notable_players.locked_until = (SELECT MAX(locked_until)
+# FROM notable_players)
 # LEFT JOIN teams using(team_id)
 # WHERE TRUE
 # AND matches.start_time >= extract(epoch from timestamp '2018-06-20T07:00:00.000Z')
@@ -38,13 +42,13 @@ def run_data_cleaning_pipeline(inital_csv_path):
     extract_match_data('data/match_ids')
     drop_na('data/full_data.csv')
     find_team_avg('data/full_data.csv')
-    calculate_team_differences('data/team_averages.csv','data/full_data.csv')
+    calculate_team_differences('data/team_averages.csv', 'data/full_data.csv')
 
 # this function creates a match_ids.csv file using the raw data from the query
 def load_csv(csv_path): # parameter is the csv file path as a string
-    df=pd.read_csv(csv_path)
-    df=df.drop_duplicates('match_id')#drops duplicate match ids because players can be in the same match.
-    df.drop(df.iloc[:,1:6], inplace=True, axis=1)# remove unused columns
+    df = pd.read_csv(csv_path)
+    df = df.drop_duplicates('match_id')#drops duplicate match ids because players can be in the same match.
+    df.drop(df.iloc[:, 1:6], inplace = True, axis = 1)# remove unused columns
     df.to_csv("data/match_ids.csv", index = False)# create a new dataframe "match_ids.csv"
 
 
@@ -198,8 +202,8 @@ def extract_match_data(match_ids_path):   # parameter is the csv file path as a 
 
 
 
-    matches_data=matches_data.dropna()
-    matches_data=matches_data.reset_index(drop=True)
+    matches_data = matches_data.dropna()
+    matches_data = matches_data.reset_index(drop = True)
 
 
     print(matches_data)
@@ -207,10 +211,10 @@ def extract_match_data(match_ids_path):   # parameter is the csv file path as a 
     matches_data.to_csv("data/full_data.csv", index=False)
 # This function takes in the csv file path as a string and drops any rows with missing values and reindex's the data frame. You made need to use this when there are teams that no longer exist in the database
 def drop_na(full_data_path):
-    df=pd.read_csv(full_data_path)
-    df=df.dropna()
-    df=df.reset_index(drop=True)
-    df.to_csv(full_data_path, index=False)
+    df = pd.read_csv(full_data_path)
+    df = df.dropna()
+    df = df.reset_index(drop = True)
+    df.to_csv(full_data_path, index = False)
 
 # This function takes in the full_data csv from the "extract match data function" and creates a dataframe listing all teams and their average performance over specificed time period.
 def find_team_avg(full_data_path):  # parameter is the csv file path as a string
@@ -247,7 +251,7 @@ def find_team_avg(full_data_path):  # parameter is the csv file path as a string
     del matches_data_dire['radiant_tower_damage']
     del matches_data_dire['radiant_tower_status']
     del matches_data_dire['radiant_xpm']
-    
+
     # renames the columns for the data frames, adds the two frames together and gives finds the averages of all the matches
 
     matches_data_radiant = matches_data_radiant.rename(columns = {'Radiant' : 'team', 'radiant_assists' : 'assists', 'radiant_barracks' : 'barracks', 'radiant_denies' : 'denies', 'radiant_gpm' : 'gpm', 'radiant_healing' : 'healing', 'radiant_hero_damage' : 'hero_damage','radiant_kills' : 'kills', 'radiant_last_hits' : 'last_hits', 'radiant_total_levels' : 'total_levels', 'radiant_tower_damage' : 'tower_damage', 'radiant_tower_status' : 'tower_status', 'radiant_xpm' : 'xpm'})
@@ -291,7 +295,38 @@ def calculate_team_differences(team_averages_path,full_data_path):  # parameters
     # it then subtracts the team averages IN RESPECT TO THE RADIANT team
     # Example:  A negative 25 score in "diff_last hits" column would indicate that the Dire team had 25 MORE last hits than the radiant team
     def find_team_difference(team1, team2, i):
-        team_map = {'20 min afk les' : 0, 'Alliance' : 1, 'Espada' : 2, 'Evil Geniuses': 3, 'Fnatic' : 4, 'Invictus Gaming': 5, 'Kaipi': 6 ,'LeftOneTV': 7 ,'MEGA-LADA E-sports': 8 ,'Mineski': 9,'New Guys':10 ,'Newbee': 11,'No Bounty Hunter': 12 ,'OG': 13 ,'OpTic Gaming': 14 ,'PSG.LGD':15 ,'TNC Predator': 16 ,'Team Empire': 17,'Team Liquid': 18,'Team Secret': 19,'Team Serenity':20 ,'Team Singularity':21 ,'The Final Tribe':22 ,'VGJ Storm':23 ,'VGJ Thunder':24 ,'Vega Squadron':25,'Vici Gaming':26,'Virtus.pro':27,'Wind and Rain':28, 'Winstrike':29, 'paiN Gaming':30, '•':31}
+        team_map = {'20 min afk les' : 0,
+                    'Alliance': 1,
+                    'Espada': 2,
+                    'Evil Geniuses': 3,
+                    'Fnatic' : 4,
+                    'Invictus Gaming': 5,
+                    'Kaipi': 6,
+                    'LeftOneTV': 7,
+                    'MEGA-LADA E-sports': 8,
+                    'Mineski': 9,
+                    'New Guys':10 ,
+                    'Newbee': 11,
+                    'No Bounty Hunter': 12 ,
+                    'OG': 13 ,
+                    'OpTic Gaming': 14 ,
+                    'PSG.LGD':15 ,
+                    'TNC Predator': 16 ,
+                    'Team Empire': 17,
+                    'Team Liquid': 18,
+                    'Team Secret': 19,
+                    'Team Serenity':20 ,
+                    'Team Singularity':21 ,
+                    'The Final Tribe':22 ,
+                    'VGJ Storm':23 ,
+                    'VGJ Thunder':24 ,
+                    'Vega Squadron':25,
+                    'Vici Gaming': 26,
+                    'Virtus.pro':27,
+                    'Wind and Rain': 28,
+                    'Winstrike':29,
+                    'paiN Gaming':30,
+                    '•':31}
         team1_ix = team_map[team1]
         team2_ix = team_map[team2]
 
@@ -311,8 +346,10 @@ def calculate_team_differences(team_averages_path,full_data_path):  # parameters
     for x in range(0, len(matchup_data)):
         print(x, " of ", len(matchup_data))
         try:
-            find_team_difference(matchup_data.loc[x,'Radiant'], matchup_data.loc[x, 'Dire'], x)
-        except:
+            find_team_difference(matchup_data.loc[x, 'Radiant'],
+                                 matchup_data.loc[x, 'Dire'],
+                                 x)
+        except(RuntimeError):
             print("Not able to find ", x)
 
-    matchup_data.to_csv("data/matchup_data.csv", index = False)
+    matchup_data.to_csv("data/matchup_data.csv", index=False)

@@ -19,4 +19,12 @@ A Machine Learning Approach to Predicting the Results of Professional ESports To
 
 ## Gathering and Cleaning Data
 
+## Data Preparation
+
+## Modeling
+
+## Usage
+
+## Future Work
+
 

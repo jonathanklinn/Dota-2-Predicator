@@ -24,10 +24,17 @@ Esports to reach 385 million viewers in 2017: According to Newzoo, an esports ma
 
 Similar to how the NFL, NBA, MLB, and NHL follow a franchise model with limited membership in their respective sports, esports in North America seems to be following a similar path. A recent announcement from Riot on their League of Legends title has established a franchise model for the North American league. There will be ten spots, each with the hefty price tag of $10 million to buy in. Activision’s title, Overwatch, is also in the process of franchising. In Europe, esports is likely going to follow a promotion and relegation model, given the region’s familiarity with that sporting system in groups like the UEFA Champions League.
 
-As franchising becomes the dominant model, elite teams and organizations will become revenue-generating machines. However, those without franchise spots will be forced to find revenue in secondary leagues or look to establish themselves in titles that have yet to be franchised. They won’t have access to sizeable revenue sharing deals in places like League of Legends and will have to focus on competing in secondary leagues, which offer far smaller cash prizes and sponsorship opportunities. While this consolidation will certainly be painful initially, I view this as a much-needed step forward for the industry as it continues to grow and prune the market. The below chart includes franchising details for the Riot and Overwatch leagues.
+As franchising becomes the dominant model, elite teams and organizations will become revenue-generating machines. However, those without franchise spots will be forced to find revenue in secondary leagues or look to establish themselves in titles that have yet to be franchised. They won’t have access to sizeable revenue sharing deals in places like League of Legends and will have to focus on competing in secondary leagues, which offer far smaller cash prizes and sponsorship opportunities. While this consolidation will certainly be painful initially, I view this as a much-needed step forward for the industry as it continues to grow and prune the market. 
+
+The upcoming year should see esports grow to ~$700 million, a growth of 41% from the previous year and an increase from $325 million in 2015. The 2017 figure does not include betting or fantasy esports numbers. Revenues are projected to reach $1.5 billion by 2020, growing at a CAGR (2015-2020) of 35.6%.
 
 
-![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Esports%20Growth%201.jpg)
+
+
+
+![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Esports%20Growth%202.png)
+
+![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Esports%20Growth%203.jpg)
 
 
 ## Product

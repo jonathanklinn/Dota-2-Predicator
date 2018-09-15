@@ -4,13 +4,14 @@ A Machine Learning Approach to Predicting the Results of Professional ESports To
 ## Table of Contents
 1. [Motivation](#motivation)
 2. [Product](#product)
-3. [Gathering and Cleaning Data](#gathering-and-cleaning-data)
-4. [Data Preparation](#data-preparation)
-5. [Modeling](#modeling)
-6. [Usage](#usage)
-7. [Future Work](#future-work)
-8. [References](#references)
-9. [License](#license)
+3. [Usage](#usage)
+4. [Gathering and Cleaning Data](#gathering-and-cleaning-data)
+5. [Data Preparation](#data-preparation)
+6. [Modeling](#modeling)
+7  [Results](#results)
+8. [Future Work](#future-work)
+9. [References](#references)
+10. [License](#license)
 
 ## Motivation
 
@@ -43,7 +44,7 @@ The 2018 International Dota 2 World Championships  conists of two phases. A pre-
 
 I have deciided to use the pre tournament game data for model training, and the Main Event game data as my testing data. I chose to limit the training data because I believe that the pre Main event matches will be the best indicator of perforance in the Main Event games. Other reasons include the fact that many teams are organized speficically for the World championships so team data prior to June 20th for those teams do not exist. 
 
-
+## Usage
 
 ## Gathering and Cleaning Data
 
@@ -53,7 +54,16 @@ I have deciided to use the pre tournament game data for model training, and the 
 
 ## Modeling
 
-## Usage
+![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.06.00%20PM.png)
+
+![alt text] (https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.07.32%20PM.png)
+
+![alt text] (
+
+
+## Results
+
+
 
 ## Future Work
 

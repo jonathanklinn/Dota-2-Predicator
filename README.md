@@ -56,7 +56,7 @@ I have deciided to use the pre tournament game data for model training, and the 
 
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.06.00%20PM.png)
 
-![alt text] (https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.07.32%20PM.png)
+![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.07.32%20PM.png)
 
 ![alt text] (
 

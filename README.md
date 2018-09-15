@@ -39,6 +39,10 @@ The upcoming year should see esports grow to ~$700 million, a growth of 41% from
 
 ## Product
 
+The 2018 International Dota 2 World Championships  conists of two stages. A pre-tournament phase that lasts 2 months starting June 20th until August 20th 2018, and "Main Event" phase, where the top 18 teams from the pre-tournmaent stage battle it out for the final championship.
+
+I have deciided to use the pre tournament game data for model training, and the Main Event game data as my testing data. I chose to limit the training data because I believe that the pre Main event matches will be the best indicator of perforance in the Main Event games. Other reasons include the fact that many teams are organized speficically for the World championships so team data prior to June 20th for those teams do not exist. 
+
 
 
 ## Gathering and Cleaning Data

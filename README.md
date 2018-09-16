@@ -8,7 +8,7 @@ A Machine Learning Approach to Predicting the Results of Professional ESports To
 4. [Gathering and Cleaning Data](#gathering-and-cleaning-data)
 5. [Data Preparation](#data-preparation)
 6. [Modeling](#modeling)
-7  [Results](#results)
+7.  [Results](#results)
 8. [Future Work](#future-work)
 9. [References](#references)
 10. [License](#license)

@@ -18,22 +18,17 @@ A Machine Learning Approach to Predicting the Results of Professional ESports To
 >
 >–Steve Borenstein, Chairman of Activision Blizzard’s Esports Division and Former CEO of ESPN and NFL Network
 
-Esports is currently the fastest growing . In the same way that traditional sports have competitions in baseball, basketball, and football, esports encompasses competitions across a variety of video games. Contrary to common perception, esports is not simply a phenomenon occurring in the basements of unemployed twentysomethings; the industry is real, growing globally, and investable. In fact, over 380 million people watch esports worldwide both online and in person. More people watched the 2016 world finals of popular esports game League of Legends (43 million viewers) than the NBA Finals Game 7 that year (31 million viewers). With its fragmented landscape and digital platform, the esports sector holds promise for a multitude of monetization opportunities.
+Esports is currently the fastest growing digital entertainment platform. In the same way that traditional sports have competitions, in basketball, football, and baseball, esports encompasses competitions across a variety of video games. Contrary to common perception, esports is not simply a phenomenon occurring in the basements of unemployed twentysomethings; the industry is real, growing rapidly, and readily investable. Over 380 million people watch esports worldwide both online and in person. More people watched the 2016 world finals of League of Legends (43 million viewers) than the NBA Finals Game 7 that year (31 million viewers). The esports sector holds promise for a multitude of monetization opportunities.
 
-Esports to reach 385 million viewers in 2017: According to Newzoo, an esports market research organization, in 2017, the audience of esports will reach a total of roughly 385 million people globally. Of this figure, 191 million are “esports enthusiasts” and 194 million are “occasional viewers.” The number of enthusiasts is projected to grow by 50% by 2020, totaling 286 million
-
-Similar to how the NFL, NBA, MLB, and NHL follow a franchise model with limited membership in their respective sports, esports in North America seems to be following a similar path. A recent announcement from Riot on their League of Legends title has established a franchise model for the North American league. 
-
-As franchising becomes the dominant model, elite teams and organizations will become revenue-generating machines. However, those without franchise spots will be forced to find revenue in secondary 
+Similar to how the NFL, NHL, MLB, and NBA follow a franchise model , esports in North America seems to be following a similar path. As franchising becomes the dominant model, elite teams and organizations will become revenue-generating machines. However, those without franchise spots will be forced to find revenue in secondary and this is where I believe industries  industries built around data analytics, predictions, esports gambling, will thrive. 
 
 
-
-
-
-
-
+Market Segments of E-Sports
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Esports%20Growth%202.png)
 
+
+
+Popularity Growth of E-Sports Gambling
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Esports%20Growth%203.jpg)
 
 

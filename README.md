@@ -54,14 +54,6 @@ I chose to limit the training and testing data because I believe that the pre-to
 
 ## Gathering Data
 
-
-
-
-
-
-
-## Data Preparation
-
 Using opendota.com query function. I used the following SQL query to gather all games pre-tournament matches played from June 14th 2018 to August 20th 2018:
 
 SELECT
@@ -83,13 +75,26 @@ FROM notable_players)
 LEFT JOIN teams using(team_id)
 WHERE TRUE
 AND matches.start_time >= extract(epoch from timestamp '2018-06-20T07:00:00.000Z')
-# AND matches.start_time <= extract(epoch from timestamp '2018-08-20T07:00:00.000Z')
-# AND leagues.tier = 'premium'
-# ORDER BY matches.match_id NULLS LAST
+AND matches.start_time <= extract(epoch from timestamp '2018-08-20T07:00:00.000Z')
+AND leagues.tier = 'premium'
+ORDER BY matches.match_id NULLS LAST
 
 The query returned 410 matches. After deleting null values( games that had missing data due to disqualifications or disconnections) there were a total of 390 pre-tournament matches and a total of 31 teams competing for the 18 main event spots. 
 
 I then extracted all 390 match_ids from the query and created a dataframe called “pre_ti_match_ids” that would be used in the cleaning and preparation process.
+
+## Data Preparation
+
+The dataframe consisting of the match ids were then processed using a data cleaning pipeline using the functions in "data_cleaning_functions.py. 
+
+This is a quick outline of the steps taken to create the final dataframe used for modeling
+
+  1. Intialize the dota2api by using a personal steam api key
+  2. Call the dota2api for individual match data by looping through each match_id from "pre_ti_match_ids" dataframe
+  3. Find team averages for each team by using the pivot function
+  4. Find the differences in team averages between competeing teams for each match. Include a binary variable called "Radiant        Win"
+
+
 
 
 ## Modeling

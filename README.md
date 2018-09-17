@@ -5,10 +5,10 @@ A Machine Learning Approach to Predicting the Results of Professional ESports To
 1. [Motivation](#motivation)
 2. [Product](#product)
 3. [Usage](#usage)
-4. [Gathering and Cleaning Data](#gathering-and-cleaning-data)
+4. [Gathering Data](#gathering-and-cleaning-data)
 5. [Data Preparation](#data-preparation)
 6. [Modeling](#modeling)
-7.  [Results](#results)
+7. [Results](#results)
 8. [Future Work](#future-work)
 9. [References](#references)
 10. [License](#license)
@@ -44,6 +44,7 @@ The 2018 International Dota 2 World Championships is comprised of two phases, a 
 
 The dota-2-predictor makes its main event prediction based of the differences between the two competing team’s average in-game statistics. The main assumption I am making is that teams that perform well in the pre-tournament stages have a higher chance of winning during the main event. These averages are taken from the games they played during the pre-tournament phase. The differences are taken in respect to the "Radiant Team" of that game. The model predicts whether or not the “Radiant Team” will win based off of the differences in various in game statistics.
 
+I chose to limit the training and testing data because I believe that the pre-tournament phase games will be the best indicator of performance in the Main Event games. Other reasons include the fact that many teams are organized specifically for the World championships so team data prior to June 14th for those teams do not exist.
 
 
 
@@ -51,15 +52,45 @@ The dota-2-predictor makes its main event prediction based of the differences be
 
 
 
-## Gathering and Cleaning Data
+## Gathering Data
 
-I have deciided to use the pre tournament game data for model training, and the Main Event game data as my testing data. I chose to limit the training data because I believe that the pre Main event matches will be the best indicator of perforance in the Main Event games. Other reasons include the fact that many teams are organized speficically for the World championships so team data prior to June 20th for those teams do not exist. 
 
-My model was created by querying opendota.com for all games played during the pre-tournament phase and downloading the CSV. The csv can then be fed into my model using the functions within "model
+
+
 
 
 
 ## Data Preparation
+
+Using opendota.com query function. I used the following SQL query to gather all games pre-tournament matches played from June 14th 2018 to August 20th 2018:
+
+SELECT
+matches.match_id,
+matches.start_time,
+((player_matches.player_slot < 128) = matches.radiant_win) win,
+player_matches.hero_id,
+player_matches.account_id,
+leagues.name leaguename
+FROM matches
+JOIN match_patch using(match_id)
+JOIN leagues using(leagueid)
+JOIN player_matches using(match_id)
+JOIN heroes on heroes.id = player_matches.hero_id
+LEFT JOIN notable_players
+ON notable_players.account_id = player_matches.account_id
+AND notable_players.locked_until = (SELECT MAX(locked_until)
+FROM notable_players)
+LEFT JOIN teams using(team_id)
+WHERE TRUE
+AND matches.start_time >= extract(epoch from timestamp '2018-06-20T07:00:00.000Z')
+# AND matches.start_time <= extract(epoch from timestamp '2018-08-20T07:00:00.000Z')
+# AND leagues.tier = 'premium'
+# ORDER BY matches.match_id NULLS LAST
+
+The query returned 410 matches. After deleting null values( games that had missing data due to disqualifications or disconnections) there were a total of 390 pre-tournament matches and a total of 31 teams competing for the 18 main event spots. 
+
+I then extracted all 390 match_ids from the query and created a dataframe called “pre_ti_match_ids” that would be used in the cleaning and preparation process.
+
 
 ## Modeling
 

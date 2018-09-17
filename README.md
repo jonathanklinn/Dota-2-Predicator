@@ -42,11 +42,23 @@ The upcoming year should see esports grow to ~$700 million, a growth of 41% from
 
 The 2018 International Dota 2 World Championships  conists of two phases. A pre-tournament phase that consits of three seperate events; a Open Qualifier, Regional Qualifier, and a pre "main event" group stage that determines winner and loser brackets in the Main Event. This pre toruanment phase lasts  2 months starting June 14th until August 20th 2018. The second phase, known as the  "Main Event" phase, is where the top 18 teams from the pre-tournmaent phase battle it out for the final championship.
 
-I have deciided to use the pre tournament game data for model training, and the Main Event game data as my testing data. I chose to limit the training data because I believe that the pre Main event matches will be the best indicator of perforance in the Main Event games. Other reasons include the fact that many teams are organized speficically for the World championships so team data prior to June 20th for those teams do not exist. 
+The dota-2-predictor makes its prediction based of the the the differences between two teams average in-game statistics. These averages are taken from the games they played during the pre-torunament phase. The differences are taken in respect to the "Radiant Team" of that game. The main assumptions I am making are that teams that perform well in the pre tournament stages have a higher chance of winning during the main event.
+
+  1. Extract match_ids from CSV file
+  2. Extract match data using match_ids by calling the dota2api
+  3. Calculate 
+
+
 
 ## Usage
 
+
+
 ## Gathering and Cleaning Data
+
+I have deciided to use the pre tournament game data for model training, and the Main Event game data as my testing data. I chose to limit the training data because I believe that the pre Main event matches will be the best indicator of perforance in the Main Event games. Other reasons include the fact that many teams are organized speficically for the World championships so team data prior to June 20th for those teams do not exist. 
+
+My model was created by querying opendota.com for all games played during the pre-tournament phase and downloading the CSV. The csv can then be fed into my model using the functions within "model
 
 
 
@@ -62,6 +74,7 @@ I have deciided to use the pre tournament game data for model training, and the 
 
 
 ## Results
+
 
 
 

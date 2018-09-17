@@ -8,7 +8,7 @@ A Machine Learning Approach to Predicting the Results of Professional ESports To
 4. [Gathering Data](#gathering-and-cleaning-data)
 5. [Data Preparation](#data-preparation)
 6. [Modeling](#modeling)
-7. [Results](#results)
+7. [Results](#prediction-results)
 8. [Future Work](#future-work)
 9. [References](#references)
 
@@ -137,7 +137,7 @@ The following are the feature importances:
 
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.06.49%20PM.png)
 
-The results show that hero damage had the most influence and predictive power when using GDBC.
+The results show that hero damage was the most influential in the construction of the GDBC model.
 
 The following are partial dependency plots:
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.07.17%20PM.png)
@@ -145,7 +145,7 @@ The following are partial dependency plots:
 You can see here how drastic the change is when looking at hero damage.
 
 
-## Results
+##  Prediction Results
 
 After finding the best fit model for the pre-toruanment results. I applied the same model and same parameters but this time using the Main Event game results as my target. The targets consisted of the final 38 games played during the "Main Event" phase of the tournament.
 

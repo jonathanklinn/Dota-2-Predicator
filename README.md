@@ -117,7 +117,7 @@ This is a quick outline of the steps taken to create the final dataframe used fo
   1. Intialize the dota2api by using a personal steam api key
   2. Call the dota2api for individual match data by looping through each match_id from "pre_ti_match_ids" dataframe
   3. Find team averages for each team by using the pivot function
-  4. Find the differences in team averages between competeing teams for each match. Include a binary variable called "Radiant        Win"
+  4. Find the differences in team averages between competeing teams for each match. Include a binary variable called "radiant_winner"
   
  The final dataframe should look something like this:
  ![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.09.58%20PM.png)

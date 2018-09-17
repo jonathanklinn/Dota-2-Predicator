@@ -95,7 +95,7 @@ This is a quick outline of the steps taken to create the final dataframe used fo
   4. Find the differences in team averages between competeing teams for each match. Include a binary variable called "Radiant        Win"
   
  The final dataframe should look something like this:
- ![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.06.00%20PM.png)
+ ![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-17%20at%2012.14.26%20PM.png)
 
 
 

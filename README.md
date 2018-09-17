@@ -51,15 +51,14 @@ git clone https://github.com/jonathanklinn/Dota-2-Predictor
 ```
 The repository has the following structure. GitHub scraping and cleaning are located in data_cleaning_functions.py.  Modeling and analysis are located in model a Model\ Analysis.ipynb
 ```
+.
+├── Images
+│   ├── Esports\ Growth\ 1.jpg
+│   ├── Esports\ Growth\ 2.png
 ├── Pre\ Tournament\ Base\ Models
 │   ├── Data\ Cleaning\ Test.ipynb
 │   ├── Model\ Analysis.ipynb
 │   ├── README.md
-│   ├── __pycache__
-│   │   ├── data_cleaning_functions.cpython-36.pyc
-│   │   ├── dota2_predictor_functions.cpython-36.pyc
-│   │   ├── extract_match_data.cpython-36.pyc
-│   │   └── model_functions.cpython-36.pyc
 │   ├── data
 │   │   ├── full_data.csv
 │   │   ├── match_ids.csv
@@ -71,6 +70,22 @@ The repository has the following structure. GitHub scraping and cleaning are loc
 │   ├── model_functions.py
 │   └── steam_api_key.txt
 ├── README.md
+├── Tournament\ Prediction\ Models
+│   ├── README.md
+│   ├── TI\ Predictions\ Using\ Gradient\ Boosting.ipynb
+│   ├── data
+│   │   ├── full_data.csv
+│   │   ├── match_ids.csv
+│   │   ├── matchup_data.csv
+│   │   ├── pre_ti_matches.csv
+│   │   ├── team_averages.csv
+│   │   ├── ti_full_data.csv
+│   │   ├── ti_match_ids.csv
+│   │   ├── ti_matchup_data.csv
+│   │   ├── ti_team_averages.csv
+│   │   └── tournament_matches.csv
+│   ├── data_cleaning_functions.py
+│   └── model_functions.py
 └── steam_api_key.txt
 
 ```

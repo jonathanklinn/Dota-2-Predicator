@@ -170,7 +170,9 @@ These were my results:
 
 Surprisngly, there was a higher accuracy rating in predicting the 38 games. This is probably due to the fact that the data set was much smaller. 
 
-My model correctly predicted that Team OG would beat out PSG.LGD even though the match up was neck to neck and ended in a 5 game series.
+My model predicted that Team OG would beat out PSG.LGD in the World Championship Finals. The final series ended up with a 5 game series where Team OG beat out PSG.LGD 3-2.  
+
+Since my model used data from the pre-tournament matches it is inherently flawed because it does not take into account data from the Main Event. MY model would have predicted that OG would have won every single game in the 5 game series regardless of how they had performed during the week. This is something thatva rolling average could fix and is mentioned in my future work section
 
 
 ## Future Work

@@ -180,6 +180,6 @@ https://www.analyticsvidhya.com/blog/2016/02/complete-guide-parameter-tuning-gra
 <img src="https://kaggle2.blob.core.windows.net/competitions/kaggle/3428/media/scikit-learn-logo.png" width="250">
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Logo_of_NumPy.svg/1200px-Logo_of_NumPy.svg.png" width="250">
 <img src="https://pandas.pydata.org/_static/pandas_logo.png" width="250">
-src="https://camo.githubusercontent.com/630f51296667710aa4dd5959ec5cbc9c03bd48ac/687474703a2f2f7777772e6168612e696f2f6173736574732f6769746875622e37343333363932636162626661313332663334616462303334653739303966612e706e67" width="250">
+
 
 

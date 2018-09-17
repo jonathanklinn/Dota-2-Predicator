@@ -1,4 +1,4 @@
-# Dota 2 World Championship Match Predictor 
+# Dota 2 World Championship Main Event Match Predictor 
 A Machine Learning Approach to Predicting the Results of Professional ESports Tournament
 
 ## Table of Contents

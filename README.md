@@ -164,6 +164,9 @@ I believe that my model could be further improved if I used rolling averages ins
 
 ## References
 
+'Report: Esports To Grow Substantially And Near Billion-Dollar Revenues In 2018'
+https://www.forbes.com/sites/mattperez/2018/02/21/report-esports-to-grow-substantially-and-near-a-billion-dollar-revenues-in-2018/#40cc893b2b01
 
-
+'Complete Guide to Parameter Tuning in Gradient Boosting (GBM) in Python'
+https://www.analyticsvidhya.com/blog/2016/02/complete-guide-parameter-tuning-gradient-boosting-gbm-python/
 

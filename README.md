@@ -134,6 +134,7 @@ Of the four tested, Gradient Boosting had the highest cross validation accuracy 
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.06.00%20PM.png)
 
 The following are the feature importances:
+
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.06.49%20PM.png)
 
 The results show that hero damage had the most influence and predictive power when using GDBC.

@@ -40,13 +40,10 @@ The upcoming year should see esports grow to ~$700 million, a growth of 41% from
 
 ## Product
 
-The 2018 International Dota 2 World Championships  conists of two phases. A pre-tournament phase that consits of three seperate events; a Open Qualifier, Regional Qualifier, and a pre "main event" group stage that determines winner and loser brackets in the Main Event. This pre toruanment phase lasts  2 months starting June 14th until August 20th 2018. The second phase, known as the  "Main Event" phase, is where the top 18 teams from the pre-tournmaent phase battle it out for the final championship.
+The 2018 International Dota 2 World Championships is comprised of two phases, a pre-tournament phase and a main event phase. The pre-tournament phase consists of three separate events; an open qualifier, regional qualifier, and a pre-main event group stage that determines each team’s starting position and bracket during the main event. This pre-tournament phase lasts 2 months starting June 14th and ending on August 20th 2018. The second phase, the main event, is where the top 18 teams from the pre-tournament phase battle it out for the final championship.
 
-The dota-2-predictor makes its prediction based of the the the differences between two teams average in-game statistics. These averages are taken from the games they played during the pre-torunament phase. The differences are taken in respect to the "Radiant Team" of that game. The main assumptions I am making are that teams that perform well in the pre tournament stages have a higher chance of winning during the main event.
+The dota-2-predictor makes its main event prediction based of the differences between the two competing team’s average in-game statistics. The main assumption I am making is that teams that perform well in the pre-tournament stages have a higher chance of winning during the main event. These averages are taken from the games they played during the pre-tournament phase. The differences are taken in respect to the "Radiant Team" of that game. The model predicts whether or not the “Radiant Team” will win based off of the differences in various in game statistics.
 
-  1. Extract match_ids from CSV file
-  2. Extract match data using match_ids by calling the dota2api
-  3. Calculate 
 
 
 

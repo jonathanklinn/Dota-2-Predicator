@@ -95,25 +95,45 @@ This is a quick outline of the steps taken to create the final dataframe used fo
   4. Find the differences in team averages between competeing teams for each match. Include a binary variable called "Radiant        Win"
   
  The final dataframe should look something like this:
- ![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-17%20at%2012.14.26%20PM.png)
+ ![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.09.58%20PM.png)
 
 
 
 
 ## Modeling
 
+To train my model, I tried four different hard classifier algorithims using sci-kit learn. Logistic Regression, KNN, Random Forest, and Gradient Boosting. I used accuracy is my performance metric.
+
+Of the four tested, Gradient Boosting had the highest cross validation accuracy rating. After performing a grid search for the best possible parameters I had the following results:
+
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.06.00%20PM.png)
 
-![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.07.32%20PM.png)
+The following are the feature importances:
+![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.06.49%20PM.png)
 
-![alt text] (
+The results show that hero damage had the most influence and predictive power when using GDBC.
+
+The following are partial dependency plots:
+![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.07.17%20PM.png)
+
+You can see here how drastic the change is when looking at hero damage.
 
 
 ## Results
 
+After finding the best fit model for the pre-toruanment results. I applied the same model and same parameters but this time using the Main Event game results as my target. The targets consisted of the final 38 games played during the "Main Event" phase of the tournament.
 
+These were my results:
+
+![alt text](https://github.com/jonathanklinn/Dota-2-Predictor/blob/master/Images/Screen%20Shot%202018-09-15%20at%2012.11.20%20PM.png)
+
+Surprisngly, there was a higher accuracy rating in predicting the 38 games. This is probably due to the fact that the data set was much smaller. 
+
+My model correctly predicted that Team OG would beat out PSG.LGD even though the match up was neck to neck and ended in a 5 game series.
 
 
 ## Future Work
+
+I believe that my model could be further improved if I used rolling averages instead of static averages to predict game outcomes. I also believe that adding in individual player data instead of team data would make my model more robust seeing how many teams change players during the competitive season.  
 
 

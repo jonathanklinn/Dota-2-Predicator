@@ -5,7 +5,7 @@ A Machine Learning Approach to Predicting the Results of Professional ESports To
 1. [Motivation](#motivation)
 2. [Product](#product)
 3. [Usage](#usage)
-4. [Gathering Data](#gathering-and-cleaning-data)
+4. [Gathering Data](#gathering-data)
 5. [Data Preparation](#data-preparation)
 6. [Modeling](#modeling)
 7. [Results](#prediction-results)

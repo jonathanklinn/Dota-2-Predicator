@@ -23,12 +23,14 @@ Esports is currently the fastest growing digital entertainment platform. In the 
 Similar to how the NFL, NHL, MLB, and NBA follow a franchise model , esports in North America seems to be following a similar path. As franchising becomes the dominant model, elite teams and organizations will become revenue-generating machines. However, those without franchise spots will be forced to find revenue in secondary and this is where I believe industries  industries built around data analytics, predictions, esports gambling, will thrive. 
 
 
-Market Segments of E-Sports
+### Market Segments of E-Sports
+
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Esports%20Growth%202.png)
 
 
 
-Popularity Growth of E-Sports Gambling
+### Popularity Growth of E-Sports Gambling
+
 ![alt text](https://github.com/jonathanklinn/Dota-2-Predicator/blob/master/Images/Esports%20Growth%203.jpg)
 
 

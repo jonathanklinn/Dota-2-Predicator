@@ -332,33 +332,33 @@ def calculate_team_differences(team_averages_path, full_data_path):
 
     def find_team_difference(team1, team2, i):
         team_map = team_mapping(team_data)
-        team1_ix = team_map[team1]
-        team2_ix = team_map[team2]
+        team1_index = team_map[team1]
+        team2_index = team_map[team2]
 
-        matchup_data.loc[i, 'diff_assists'] = team_data.loc[team1_ix,
-                                                            'assists'] - team_data.loc[team2_ix, 'assists']  # nopep8
-        matchup_data.loc[i, 'diff_denies'] = team_data.loc[team1_ix,
-                                                           'denies'] - team_data.loc[team2_ix, 'denies']  # nopep8
-        matchup_data.loc[i, 'diff_first_blood'] = team_data.loc[team1_ix,
-                                                                'first_blood'] - team_data.loc[team2_ix, 'first_blood']  # nopep8
-        matchup_data.loc[i, 'diff_gpm'] = team_data.loc[team1_ix,
-                                                        'gpm'] - team_data.loc[team2_ix, 'gpm']  # nopep8
-        matchup_data.loc[i, 'diff_healing'] = team_data.loc[team1_ix,
-                                                            'healing'] - team_data.loc[team2_ix, 'healing']  # nopep8
-        matchup_data.loc[i, 'diff_hero_damage'] = team_data.loc[team1_ix,
-                                                                'hero_damage'] - team_data.loc[team2_ix, 'hero_damage']  # nopep8
-        matchup_data.loc[i, 'diff_kills'] = team_data.loc[team1_ix,
-                                                          'kills'] - team_data.loc[team2_ix, 'kills']  # nopep8
-        matchup_data.loc[i, 'diff_last_hits'] = team_data.loc[team1_ix,
-                                                              'last_hits'] - team_data.loc[team2_ix, 'last_hits']  # nopep8
-        matchup_data.loc[i, 'diff_match_duration'] = team_data.loc[team1_ix,
-                                                                   'match_duration'] - team_data.loc[team2_ix, 'match_duration']  # nopep8
-        matchup_data.loc[i, 'diff_total_levels'] = team_data.loc[team1_ix,
-                                                                 'total_levels'] - team_data.loc[team2_ix, 'total_levels']  # nopep8
-        matchup_data.loc[i, 'diff_tower_damage'] = team_data.loc[team1_ix,
-                                                                 'tower_damage'] - team_data.loc[team2_ix, 'tower_damage']  # nopep8
-        matchup_data.loc[i, 'diff_xpm'] = team_data.loc[team1_ix,
-                                                        'xpm'] - team_data.loc[team2_ix, 'xpm']  # nopep8
+        matchup_data.loc[i, 'diff_assists'] = team_data.loc[team1_index,
+                                                            'assists'] - team_data.loc[team2_index, 'assists']  # nopep8
+        matchup_data.loc[i, 'diff_denies'] = team_data.loc[team1_index,
+                                                           'denies'] - team_data.loc[team2_index, 'denies']  # nopep8
+        matchup_data.loc[i, 'diff_first_blood'] = team_data.loc[team1_index,
+                                                                'first_blood'] - team_data.loc[team2_index, 'first_blood']  # nopep8
+        matchup_data.loc[i, 'diff_gpm'] = team_data.loc[team1_index,
+                                                        'gpm'] - team_data.loc[team2_index, 'gpm']  # nopep8
+        matchup_data.loc[i, 'diff_healing'] = team_data.loc[team1_index,
+                                                            'healing'] - team_data.loc[team2_index, 'healing']  # nopep8
+        matchup_data.loc[i, 'diff_hero_damage'] = team_data.loc[team1_index,
+                                                                'hero_damage'] - team_data.loc[team2_index, 'hero_damage']  # nopep8
+        matchup_data.loc[i, 'diff_kills'] = team_data.loc[team1_index,
+                                                          'kills'] - team_data.loc[team2_index, 'kills']  # nopep8
+        matchup_data.loc[i, 'diff_last_hits'] = team_data.loc[team1_index,
+                                                              'last_hits'] - team_data.loc[team2_index, 'last_hits']  # nopep8
+        matchup_data.loc[i, 'diff_match_duration'] = team_data.loc[team1_index,
+                                                                   'match_duration'] - team_data.loc[team2_index, 'match_duration']  # nopep8
+        matchup_data.loc[i, 'diff_total_levels'] = team_data.loc[team1_index,
+                                                                 'total_levels'] - team_data.loc[team2_index, 'total_levels']  # nopep8
+        matchup_data.loc[i, 'diff_tower_damage'] = team_data.loc[team1_index,
+                                                                 'tower_damage'] - team_data.loc[team2_index, 'tower_damage']  # nopep8
+        matchup_data.loc[i, 'diff_xpm'] = team_data.loc[team1_index,
+                                                        'xpm'] - team_data.loc[team2_index, 'xpm']  # nopep8
 
     for x in range(0, len(matchup_data)):
         print(x, " of ", len(matchup_data))

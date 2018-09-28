@@ -20,7 +20,7 @@ A Machine Learning Approach to Predicting the Results of Professional ESports To
 
 Esports is currently the fastest growing digital entertainment platform. In the same way that traditional sports have competitions, in basketball, football, and baseball, esports encompasses competitions across a variety of video games. Contrary to common perception, esports is not simply a phenomenon occurring in the basements of unemployed twentysomethings; the industry is real, growing rapidly, and readily investable. Over 380 million people watch esports worldwide both online and in person. More people watched the 2016 world finals of League of Legends (43 million viewers) than the NBA Finals Game 7 that year (31 million viewers). The esports sector holds promise for a multitude of monetization opportunities.
 
-Similar to how the NFL, NHL, MLB, and NBA follow a franchise model , esports in North America seems to be following a similar path. As franchising becomes the dominant model, elite teams and organizations will become revenue-generating machines. However, those without franchise spots will be forced to find revenue in secondary and this is where I believe industries  industries built around data analytics, predictions, esports gambling, will thrive. 
+Similar to how the NFL, NHL, MLB, and NBA follow a franchise model , esports in North America seems to be following a similar path. As franchising becomes the dominant model, elite teams and organizations will become revenue-generating machines. However, those without franchise spots will be forced to find revenue in secondary markets and this is where I believe industries industries built around data analytics, predictions, esports gambling, will thrive. 
 
 
 ### Market Segments of E-Sports

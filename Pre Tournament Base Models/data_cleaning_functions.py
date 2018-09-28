@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 
-api = dota2api.Initialise("B335AEF628EF2F2D2DC5A94BA4A02ED9")
+api = dota2api.Initialise("B335AEF628EF2F2D2DC5A94BA4A02***")
 
 # CSV file was taken from https://www.opendota.com/
 # Using the SQL query function using the following SQL Query:
@@ -62,48 +62,48 @@ def load_csv(csv_path):  # parameter is the csv file path as a string
 # this function uses the match ids in "match_ids.csv" and does and api call. It then puts that data into a dataframe I have named "full_data.csv"
 # parameter is the csv file path as a string
 def extract_match_data(match_ids_path):
-    matches_data = pd.read_csv("data/match_ids.csv")
-    matches_data['Radiant'] = ''
-    matches_data['Dire'] = ''
+    match_data = pd.read_csv("data/match_ids.csv")
+    match_data['Radiant'] = ''
+    match_data['Dire'] = ''
 
     # Here I am creating individual columns for the new dataframe
-    matches_data['radiant_assists'] = 0
-    matches_data['radiant_barracks'] = 0
-    matches_data['radiant_denies'] = 0
-    matches_data['radiant_gpm'] = 0
-    matches_data['radiant_healing'] = 0
-    matches_data['radiant_hero_damage'] = 0
-    matches_data['radiant_kills'] = 0
-    matches_data['radiant_last_hits'] = 0
-    matches_data['radiant_total_levels'] = 0
-    matches_data['radiant_tower_damage'] = 0
-    matches_data['radiant_tower_status'] = 0
-    matches_data['radiant_xpm'] = 0
+    match_data['radiant_assists'] = 0
+    matce_data['radiant_barracks'] = 0
+    match_data['radiant_denies'] = 0
+    match_data['radiant_gpm'] = 0
+    match_data['radiant_healing'] = 0
+    match_data['radiant_hero_damage'] = 0
+    match_data['radiant_kills'] = 0
+    match_data['radiant_last_hits'] = 0
+    match_data['radiant_total_levels'] = 0
+    match_data['radiant_tower_damage'] = 0
+    match_data['radiant_tower_status'] = 0
+    match_data['radiant_xpm'] = 0
 
-    matches_data['dire_assists'] = 0
-    matches_data['dire_barracks'] = 0
-    matches_data['dire_denies'] = 0
-    matches_data['dire_gpm'] = 0
-    matches_data['dire_healing'] = 0
-    matches_data['dire_hero_damage'] = 0
-    matches_data['dire_kills'] = 0
-    matches_data['dire_last_hits'] = 0
-    matches_data['dire_total_levels'] = 0
-    matches_data['dire_tower_damage'] = 0
-    matches_data['dire_tower_status'] = 0
-    matches_data['dire_xpm'] = 0
+    match_data['dire_assists'] = 0
+    match_data['dire_barracks'] = 0
+    match_data['dire_denies'] = 0
+    match_data['dire_gpm'] = 0
+    match_data['dire_healing'] = 0
+    match_data['dire_hero_damage'] = 0
+    match_data['dire_kills'] = 0
+    match_data['dire_last_hits'] = 0
+    match_data['dire_total_levels'] = 0
+    match_data['dire_tower_damage'] = 0
+    match_data['dire_tower_status'] = 0
+    match_data['dire_xpm'] = 0
 
-    matches_data['first_blood'] = 0
-    matches_data['match_duration'] = 0
-    matches_data['radiant_winner'] = 0
+    match_data['first_blood'] = 0
+    match_data['match_duration'] = 0
+    match_data['radiant_winner'] = 0
 
-    for i in range(0, len(matches_data)):
-        # MATCH   Fills
+    for i in range(0, len(match_data)):
+       
         first_blood = 0
         match_duration = 0
         match_winner = 0
 
-        # RADIANT
+        # Radiant Team
         radiant_assists = 0
         radiant_denies = 0
         radiant_gpm = 0
@@ -131,7 +131,7 @@ def extract_match_data(match_ids_path):
         dire_xpm = 0
         dire_barracks = 0
 
-        current_match = matches_data['match_id'][i]
+        current_match = match_data['match_id'][i]
         print(current_match)
         try:
             # uses the dota2api to query each match.
@@ -152,19 +152,19 @@ def extract_match_data(match_ids_path):
                 radiant_name = match['radiant_name']
                 radiant_tower_status = match['tower_status_radiant']
 
-            matches_data.loc[i, 'radiant_assists'] = radiant_assists
-            matches_data.loc[i, 'radiant_barracks'] = radiant_barracks
-            matches_data.loc[i, 'radiant_denies'] = radiant_denies
-            matches_data.loc[i, 'radiant_gpm'] = radiant_gpm
-            matches_data.loc[i, 'radiant_healing'] = radiant_healing
-            matches_data.loc[i, 'radiant_hero_damage'] = radiant_hero_damage
-            matches_data.loc[i, 'radiant_kills'] = radiant_kills
-            matches_data.loc[i, 'radiant_last_hits'] = radiant_last_hits
-            matches_data.loc[i, 'Radiant'] = radiant_name
-            matches_data.loc[i, 'radiant_total_levels'] = radiant_total_levels
-            matches_data.loc[i, 'radiant_tower_status'] = radiant_tower_status
-            matches_data.loc[i, 'radiant_tower_damage'] = radiant_tower_damage
-            matches_data.loc[i, 'radiant_xpm'] = radiant_xpm
+            match_data.loc[i, 'radiant_assists'] = radiant_assists
+            match_data.loc[i, 'radiant_barracks'] = radiant_barracks
+            match_data.loc[i, 'radiant_denies'] = radiant_denies
+            match_data.loc[i, 'radiant_gpm'] = radiant_gpm
+            match_data.loc[i, 'radiant_healing'] = radiant_healing
+            match_data.loc[i, 'radiant_hero_damage'] = radiant_hero_damage
+            match_data.loc[i, 'radiant_kills'] = radiant_kills
+            match_data.loc[i, 'radiant_last_hits'] = radiant_last_hits
+            match_data.loc[i, 'Radiant'] = radiant_name
+            match_data.loc[i, 'radiant_total_levels'] = radiant_total_levels
+            match_data.loc[i, 'radiant_tower_status'] = radiant_tower_status
+            match_data.loc[i, 'radiant_tower_damage'] = radiant_tower_damage
+            match_data.loc[i, 'radiant_xpm'] = radiant_xpm
 
             # cycles through the last 5 players (dire team) and aggregates their in-game stats to create team statistics.
             for x in range(5, 10):
@@ -183,19 +183,19 @@ def extract_match_data(match_ids_path):
                 dire_name = match['dire_name']
                 dire_tower_status = match['tower_status_dire']
 
-            matches_data.loc[i, 'dire_assists'] = dire_assists
-            matches_data.loc[i, 'dire_barracks'] = dire_barracks
-            matches_data.loc[i, 'dire_denies'] = dire_denies
-            matches_data.loc[i, 'dire_gpm'] = dire_gpm
-            matches_data.loc[i, 'dire_healing'] = dire_healing
-            matches_data.loc[i, 'dire_hero_damage'] = dire_hero_damage
-            matches_data.loc[i, 'dire_kills'] = dire_kills
-            matches_data.loc[i, 'dire_last_hits'] = dire_last_hits
-            matches_data.loc[i, 'Dire'] = dire_name
-            matches_data.loc[i, 'dire_total_levels'] = dire_total_levels
-            matches_data.loc[i, 'dire_tower_damage'] = dire_tower_damage
-            matches_data.loc[i, 'dire_tower_status'] = dire_tower_status
-            matches_data.loc[i, 'dire_xpm'] = dire_xpm
+            match_data.loc[i, 'dire_assists'] = dire_assists
+            match_data.loc[i, 'dire_barracks'] = dire_barracks
+            match_data.loc[i, 'dire_denies'] = dire_denies
+            match_data.loc[i, 'dire_gpm'] = dire_gpm
+            match_data.loc[i, 'dire_healing'] = dire_healing
+            match_data.loc[i, 'dire_hero_damage'] = dire_hero_damage
+            match_data.loc[i, 'dire_kills'] = dire_kills
+            match_data.loc[i, 'dire_last_hits'] = dire_last_hits
+            match_data.loc[i, 'Dire'] = dire_name
+            match_data.loc[i, 'dire_total_levels'] = dire_total_levels
+            match_data.loc[i, 'dire_tower_damage'] = dire_tower_damage
+            match_data.loc[i, 'dire_tower_status'] = dire_tower_status
+            match_data.loc[i, 'dire_xpm'] = dire_xpm
 
             first_blood = match['first_blood_time']
             match_duration = match['duration']
@@ -205,18 +205,18 @@ def extract_match_data(match_ids_path):
             else:
                 match_winner = 0
 
-            matches_data.loc[i, 'first_blood'] = first_blood
-            matches_data.loc[i, 'match_duration'] = match_duration
-            matches_data.loc[i, 'radiant_winner'] = match_winner
+            match_data.loc[i, 'first_blood'] = first_blood
+            match_data.loc[i, 'match_duration'] = match_duration
+            match_data.loc[i, 'radiant_winner'] = match_winner
         except(RuntimeError):
             print("Could not find data for match id : ",  current_match)
 
-    matches_data = matches_data.dropna()
-    matches_data = matches_data.reset_index(drop=True)
+    match_data = match_data.dropna()
+    match_data = match_data.reset_index(drop=True)
 
-    print(matches_data)
+    print(match_data)
 
-    matches_data.to_csv("data/full_data.csv", index=False)
+    match_data.to_csv("data/full_data.csv", index=False)
 # This function takes in the csv file path as a string and drops any rows with missing values and reindex's the data frame. You made need to use this when there are teams that no longer exist in the database
 
 
@@ -231,54 +231,54 @@ def drop_na(full_data_path):
 
 def find_team_avg(full_data_path):  # parameter is the csv file path as a string
     # creates a radiant team data frame
-    matches_data_radiant = pd.read_csv(full_data_path)
-    matches_data_radiant.insert(3, 'is_radiant', 1)
+    match_data_radiant = pd.read_csv(full_data_path)
+    match_data_radiant.insert(3, 'is_radiant', 1)
 
     # creates a dire team data frame
-    matches_data_dire = pd.read_csv(full_data_path)
-    matches_data_dire.insert(3, 'is_radiant', 0)
+    match_data_dire = pd.read_csv(full_data_path)
+    match_data_dire.insert(3, 'is_radiant', 0)
 
     # removes Dire Team data from the Radiant dataframe
-    del matches_data_radiant['Dire']
-    del matches_data_radiant['dire_assists']
-    del matches_data_radiant['dire_barracks']
-    del matches_data_radiant['dire_denies']
-    del matches_data_radiant['dire_gpm']
-    del matches_data_radiant['dire_healing']
-    del matches_data_radiant['dire_hero_damage']
-    del matches_data_radiant['dire_kills']
-    del matches_data_radiant['dire_last_hits']
-    del matches_data_radiant['dire_total_levels']
-    del matches_data_radiant['dire_tower_damage']
-    del matches_data_radiant['dire_tower_status']
-    del matches_data_radiant['dire_xpm']
+    del match_data_radiant['Dire']
+    del match_data_radiant['dire_assists']
+    del match_data_radiant['dire_barracks']
+    del match_data_radiant['dire_denies']
+    del match_data_radiant['dire_gpm']
+    del match_data_radiant['dire_healing']
+    del match_data_radiant['dire_hero_damage']
+    del match_data_radiant['dire_kills']
+    del match_data_radiant['dire_last_hits']
+    del match_data_radiant['dire_total_levels']
+    del match_data_radiant['dire_tower_damage']
+    del match_data_radiant['dire_tower_status']
+    del match_data_radiant['dire_xpm']
 
     # removes Radiant Team data from the Dire dataframe
-    del matches_data_dire['Radiant']
-    del matches_data_dire['radiant_assists']
-    del matches_data_dire['radiant_barracks']
-    del matches_data_dire['radiant_denies']
-    del matches_data_dire['radiant_gpm']
-    del matches_data_dire['radiant_healing']
-    del matches_data_dire['radiant_hero_damage']
-    del matches_data_dire['radiant_kills']
-    del matches_data_dire['radiant_last_hits']
-    del matches_data_dire['radiant_total_levels']
-    del matches_data_dire['radiant_tower_damage']
-    del matches_data_dire['radiant_tower_status']
-    del matches_data_dire['radiant_xpm']
+    del match_data_dire['Radiant']
+    del match_data_dire['radiant_assists']
+    del match_data_dire['radiant_barracks']
+    del match_data_dire['radiant_denies']
+    del match_data_dire['radiant_gpm']
+    del match_data_dire['radiant_healing']
+    del match_data_dire['radiant_hero_damage']
+    del match_data_dire['radiant_kills']
+    del match_data_dire['radiant_last_hits']
+    del match_data_dire['radiant_total_levels']
+    del match_data_dire['radiant_tower_damage']
+    del match_data_dire['radiant_tower_status']
+    del match_data_dire['radiant_xpm']
 
     # renames the columns for the data frames, adds the two frames together and gives finds the averages of all the matches
 
-    matches_data_radiant = matches_data_radiant.rename(columns={'Radiant': 'team', 'radiant_assists': 'assists', 'radiant_barracks': 'barracks', 'radiant_denies': 'denies', 'radiant_gpm': 'gpm', 'radiant_healing': 'healing',
+    match_data_radiant = match_data_radiant.rename(columns={'Radiant': 'team', 'radiant_assists': 'assists', 'radiant_barracks': 'barracks', 'radiant_denies': 'denies', 'radiant_gpm': 'gpm', 'radiant_healing': 'healing',
                                                                 'radiant_hero_damage': 'hero_damage', 'radiant_kills': 'kills', 'radiant_last_hits': 'last_hits', 'radiant_total_levels': 'total_levels', 'radiant_tower_damage': 'tower_damage', 'radiant_tower_status': 'tower_status', 'radiant_xpm': 'xpm'})
 
-    matches_data_dire = matches_data_dire.rename(columns={'Dire': 'team', 'dire_assists': 'assists', 'dire_barracks': 'barracks', 'dire_denies': 'denies', 'dire_gpm': 'gpm', 'dire_healing': 'healing', 'dire_hero_damage': 'hero_damage',
+    match_data_dire = match_data_dire.rename(columns={'Dire': 'team', 'dire_assists': 'assists', 'dire_barracks': 'barracks', 'dire_denies': 'denies', 'dire_gpm': 'gpm', 'dire_healing': 'healing', 'dire_hero_damage': 'hero_damage',
                                                           'dire_kills': 'kills', 'dire_last_hits': 'last_hits', 'dire_total_levels': 'total_levels', 'dire_tower_damage': 'tower_damage', 'dire_tower_status': 'tower_status', 'dire_xpm': 'xpm'})
 
-    matches_data_both = pd.concat([matches_data_radiant, matches_data_dire])
+    match_data_both = pd.concat([match_data_radiant, match_data_dire])
 
-    matches_pivot = matches_data_both.pivot_table(
+    matches_pivot = match_data_both.pivot_table(
         index=['team'], margins=True, aggfunc=np.mean)
 
     del matches_pivot['match_id']
@@ -299,8 +299,8 @@ def find_team_avg(full_data_path):  # parameter is the csv file path as a string
 # parameters are both csv file path as a string
 def calculate_team_differences(team_averages_path, full_data_path):
     team_data = pd.read_csv(team_averages_path)
-    matches_data = pd.read_csv("data/full_data.csv")
-    matchup_data = matches_data[['match_id',
+    match_data = pd.read_csv("data/full_data.csv")
+    matchup_data = match_data[['match_id',
                                  'Radiant', 'Dire', 'radiant_winner']]
 
     matchup_data['diff_assists'] = 0

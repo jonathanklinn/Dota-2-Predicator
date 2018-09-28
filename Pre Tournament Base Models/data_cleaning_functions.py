@@ -98,7 +98,7 @@ def extract_match_data(match_ids_path):
     match_data['radiant_winner'] = 0
 
     for i in range(0, len(match_data)):
-       
+
         first_blood = 0
         match_duration = 0
         match_winner = 0
@@ -317,44 +317,21 @@ def calculate_team_differences(team_averages_path, full_data_path):
     matchup_data['diff_xpm'] = 0
 
     """this Inner function takes uses a dictionary that is mapped from the
-       team_averages.csv. It lists every team that will be used in that time
+       team_averages.csv. Using the team_mapping function. It lists every team that will be used in that time
        period it then subtracts the team averages IN RESPECT TO THE RADIANT team
      Example:A negative 25 score in "diff_last hits" column would indicate that
      the Dire team had 25 MORE last hits than the radiant team"""
 
+    def team_mapping(team_data):
+        #this function takes the teams and creates a mapping to iterate through
+        team_data['id'] = team_data.index
+        mapped_teams = team_data.set_index('team')['id'].to_dict()
+
+        return mapped_teams
+
+
     def find_team_difference(team1, team2, i):
-        team_map = {'20 min afk les': 0,
-                    'Alliance': 1,
-                    'Espada': 2,
-                    'Evil Geniuses': 3,
-                    'Fnatic': 4,
-                    'Invictus Gaming': 5,
-                    'Kaipi': 6,
-                    'LeftOneTV': 7,
-                    'MEGA-LADA E-sports': 8,
-                    'Mineski': 9,
-                    'New Guys': 10,
-                    'Newbee': 11,
-                    'No Bounty Hunter': 12,
-                    'OG': 13,
-                    'OpTic Gaming': 14,
-                    'PSG.LGD': 15,
-                    'TNC Predator': 16,
-                    'Team Empire': 17,
-                    'Team Liquid': 18,
-                    'Team Secret': 19,
-                    'Team Serenity': 20,
-                    'Team Singularity': 21,
-                    'The Final Tribe': 22,
-                    'VGJ Storm': 23,
-                    'VGJ Thunder': 24,
-                    'Vega Squadron': 25,
-                    'Vici Gaming': 26,
-                    'Virtus.pro': 27,
-                    'Wind and Rain': 28,
-                    'Winstrike': 29,
-                    'paiN Gaming': 30,
-                    '•': 31}
+        team_map = team_mapping(team_data)
         team1_ix = team_map[team1]
         team2_ix = team_map[team2]
 

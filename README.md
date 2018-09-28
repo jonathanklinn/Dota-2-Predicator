@@ -89,7 +89,7 @@ The repository has the following structure. GitHub scraping and cleaning are loc
 └── steam_api_key.txt
 
 ```
-
+In order to use data_cleaning_functions.py you will need to register for your own private steam_api_key. The last 3 digits of mine have been asterisked out for privacy and security reasons. You can find how to get your own api key here https://steamcommunity.com/dev
 
 
 ## Gathering Data

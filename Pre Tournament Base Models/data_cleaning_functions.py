@@ -47,26 +47,24 @@ def run_data_cleaning_pipeline(inital_csv_path):
     find_team_avg('data/full_data.csv')
     calculate_team_differences('data/team_averages.csv', 'data/full_data.csv')
 
-# this function creates a match_ids.csv file using the raw data from the query
 
 
-def load_csv(csv_path):  # parameter is the csv file path as a string
+def load_csv(csv_path):
+    # parameter is the csv file path as a string
+    # this function creates a match_ids.csv file using the raw data from the query
     df = pd.read_csv(csv_path)
-    # drops duplicate match ids because players can be in the same match.
     df = df.drop_duplicates('match_id')
-    df.drop(df.iloc[:, 1:6], inplace=True, axis=1)  # remove unused columns
-    # create a new dataframe "match_ids.csv"
+    df.drop(df.iloc[:, 1:6], inplace=True, axis=1) 
     df.to_csv("data/match_ids.csv", index=False)
 
 
-# this function uses the match ids in "match_ids.csv" and does and api call. It then puts that data into a dataframe I have named "full_data.csv"
-# parameter is the csv file path as a string
+
 def extract_match_data(match_ids_path):
+    # this function uses the match ids in "match_ids.csv" and does an api call. It then puts that data into a dataframe I have       named "full_data.csv" # parameter is the csv file path as a string
     match_data = pd.read_csv("data/match_ids.csv")
     match_data['Radiant'] = ''
     match_data['Dire'] = ''
 
-    # Here I am creating individual columns for the new dataframe
     match_data['radiant_assists'] = 0
     matce_data['radiant_barracks'] = 0
     match_data['radiant_denies'] = 0
@@ -221,6 +219,7 @@ def extract_match_data(match_ids_path):
 
 
 def drop_na(full_data_path):
+    # drops the null values from full data 
     df = pd.read_csv(full_data_path)
     df = df.dropna()
     df = df.reset_index(drop=True)
@@ -229,16 +228,14 @@ def drop_na(full_data_path):
 # This function takes in the full_data csv from the "extract match data function" and creates a dataframe listing all teams and their average performance over specificed time period.
 
 
-def find_team_avg(full_data_path):  # parameter is the csv file path as a string
-    # creates a radiant team data frame
+def find_team_avg(full_data_path):
+    # This function takes in the full_data csv from the "extract match data function" and creates a dataframe listing all teams       and their average performance over specificed time period.
     match_data_radiant = pd.read_csv(full_data_path)
     match_data_radiant.insert(3, 'is_radiant', 1)
-
-    # creates a dire team data frame
+    
     match_data_dire = pd.read_csv(full_data_path)
     match_data_dire.insert(3, 'is_radiant', 0)
 
-    # removes Dire Team data from the Radiant dataframe
     del match_data_radiant['Dire']
     del match_data_radiant['dire_assists']
     del match_data_radiant['dire_barracks']
@@ -253,7 +250,7 @@ def find_team_avg(full_data_path):  # parameter is the csv file path as a string
     del match_data_radiant['dire_tower_status']
     del match_data_radiant['dire_xpm']
 
-    # removes Radiant Team data from the Dire dataframe
+    
     del match_data_dire['Radiant']
     del match_data_dire['radiant_assists']
     del match_data_dire['radiant_barracks']

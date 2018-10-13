@@ -96,7 +96,7 @@ In order to use data_cleaning_functions.py you will need to register for your ow
 
 Using opendota.com query function. I used the following SQL query to gather all games pre-tournament matches played from June 14th 2018 to August 20th 2018:
 
-**SELECT
+>SELECT
 matches.match_id,
 matches.start_time,
 ((player_matches.player_slot < 128) = matches.radiant_win) win,
@@ -118,7 +118,7 @@ AND matches.start_time >= extract(epoch from timestamp '2018-06-20T07:00:00.000Z
 AND matches.start_time <= extract(epoch from timestamp '2018-08-20T07:00:00.000Z')
 AND leagues.tier = 'premium'
 ORDER BY matches.match_id NULLS LAST
-
+>
 The query returned 410 matches. After deleting null values( games that had missing data due to disqualifications or disconnections) there were a total of 390 pre-tournament matches and a total of 31 teams competing for the 18 main event spots. 
 
 I then extracted all 390 match_ids from the query and created a dataframe called “pre_ti_match_ids” that would be used in the cleaning and preparation process.

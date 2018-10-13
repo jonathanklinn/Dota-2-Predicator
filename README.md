@@ -96,7 +96,7 @@ In order to use data_cleaning_functions.py you will need to register for your ow
 
 Using opendota.com query function. I used the following SQL query to gather all games pre-tournament matches played from June 14th 2018 to August 20th 2018:
 
-SELECT
+**SELECT
 matches.match_id,
 matches.start_time,
 ((player_matches.player_slot < 128) = matches.radiant_win) win,
